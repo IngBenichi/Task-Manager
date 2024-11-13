@@ -1,0 +1,68 @@
+/* CSS RESET */
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* CUSTOM PROPIERTIES */
+@import url("https://fonts.googleapis.com/css2?family=Geist:wght@100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+
+:root {
+  --gray-sidebar: #18181b;
+  --gray-main: #18181a;
+  --dark-gray: #7d7d85;
+  --off-white: #dcdcdd;
+  --black: #09090b;
+  --border: #27272a;
+}
+
+html {
+  background-color: var(--black);
+  color: var(--off-white);
+  font-family: "Geist";
+}
+
+/* CONTAINER STYLES */
+.main {
+  display: grid;
+  grid-template-columns: 180px 1fr;
+  grid-template-rows: 1fr 1fr 50px;
+  grid-template-areas:
+    "aside main main"
+    "aside main main"
+    "aside footer footer";
+  min-height: 100dvh;
+}
+
+/* ASIDE STYLES */
+
+.main__aside {
+  background-color: var(--gray-sidebar);
+  grid-area: aside;
+  border-radius: 7px;
+  border: 1px solid var(--border);
+}
+
+/* SECTION STYLES */
+.main__section {
+  grid-area: main;
+}
+
+/* FOOTER STYLES */
+
+.main__footer {
+  grid-area: footer;
+  animation: line 12s backwards infinite alternate;
+}
+
+@keyframes line {
+  0% {
+    left: 0;
+  }
+  100% {
+    left: 75%;
+  }
+}
