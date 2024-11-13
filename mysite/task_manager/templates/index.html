@@ -1,11 +1,88 @@
+{% load static %}
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    <h1></h1>
-</body>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="stylesheet" href="{%static 'styles.css'%}" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="shortcut icon" href="{%static 'favicon.svg'%}" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <title>Planner - Binary Tree</title>
+  </head>
+  <body>
+    <main class="main">
+      <aside class="main__aside flex flex-col my-2 ml-2">
+        <header
+          class="flex items-center justify-between select-none hover:bg-[var(--border)] px-2 py-1 mx-2 my-3 rounded transition duration-300"
+        >
+          <div class="flex items-center relative">
+            <img class="size-4 z-20" src="{%static 'enterprise.svg'%}" />
+            <span
+              class="bg-blue-700 p-3 absolute -left-[4px] z-10 rounded-md"
+            ></span>
+            <div class="flex flex-col pl-4 leading-[15px]">
+              <strong class="text-[0.8em] font-bold" contenteditable="true">
+                ! Shoot
+              </strong>
+              <span class="text-[0.6em] font-semibold">Enterprise</span>
+            </div>
+          </div>
+          <img class="size-3" src="{%static 'arrows.svg'%}" />
+        </header>
+        <nav class="px-2">
+          <ul class="flex flex-col">
+            <li
+              class="hover:bg-[var(--border)] transition duration-300 p-1 rounded text-xs cursor-pointer flex items-center gap-2"
+            >
+              <img src="{% static 'day.svg'%}" class="size-4" />
+              Mi día
+            </li>
+            <li
+              class="hover:bg-[var(--border)] transition duration-300 p-1 rounded text-xs cursor-pointer flex items-center gap-2"
+            >
+              <img src="{% static 'tasks.svg'%}" class="size-4" />
+              Tareas
+            </li>
+            <li
+              class="hover:bg-[var(--border)] transition duration-300 p-1 rounded text-xs cursor-pointer flex items-center gap-2"
+            >
+              <img src="{% static 'projects.svg'%}" class="size-4" />
+              Proyectos
+            </li>
+          </ul>
+        </nav>
+        <footer class="grow flex items-end p-4">
+          <button
+            class="flex gap-2 items-center justify-center w-full text-xs bg-[var(--black)] px-2 py-1 rounded hover:bg-[var(--border)] transition duration-300"
+          >
+            <img src="{%static 'add.svg'%}" alt="add" class="size-4" />
+            Nuevo plan
+          </button>
+        </footer>
+      </aside>
+      <section class="main__section">
+        <header class="px-4 py-2 flex justify-between items-center">
+          <span class="text-xs text-[var(--dark-gray)]"
+            >Proyectos >
+            <strong class="text-[var(--off-white)]" contenteditable="true"
+              >! Shoot</strong
+            ></span
+          >
+          <input
+            type="text"
+            placeholder="Filtra por etiqueta"
+            class="bg-transparent border border-[var(--border)] text-sm rounded pl-2"
+          />
+        </header>
+        <div class="bg-[var(--gray-main)] h-[90%] mx-4 rounded-md p-4">
+          <h1>ARBOL ACÁ</h1>
+        </div>
+      </section>
+      <footer
+        class="main__footer m-2 p-2 ml-4 text-xs bg-[var(--gray-main)] w-fit rounded-md select-none fixed bottom-0 left-0 relative"
+      >
+        💻 with ❤️ by 🧔🏻, 🧑🏻‍🦱 and 🧑🏻
+      </footer>
+    </main>
+  </body>
 </html>
